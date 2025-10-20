@@ -1,18 +1,43 @@
 package org.example;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        SimpleDictionary book = new SimpleDictionary();
-        TextUI ui = new TextUI(scanner, book);
-        ui.start();
+        GradeRegister register = new GradeRegister();
+
+        while (true) {
+            System.out.println("Points: ");
+            String input = scanner.nextLine();
+            if (input.isEmpty()) {
+                break;
+            }
+            int score= Integer.valueOf(input);
+
+            if (score < 0 || score > 100) {
+                System.out.println("Impossible number");
+                continue;
+            }
+
+            register.addGradeBasedOnPoints(score);
+        }
+        System.out.println("");
+        int grade = 5;
+        while (grade >= 0) {
+            int stars = register.numberOfGrades(grade);
+            System.out.print(grade + ": ");
+            while (stars > 0) {
+                System.out.print("*");
+                stars--;
+            }
+            System.out.println("");
+
+            grade = grade - 1;
+        }
         }
 }
 
