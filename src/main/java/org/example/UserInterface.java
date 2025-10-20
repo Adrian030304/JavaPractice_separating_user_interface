@@ -13,7 +13,9 @@ public class UserInterface {
     }
 
     public void start() {
-
+        readPoints();
+        System.out.println("");
+        printGradeDistribution();
     }
 
     void readPoints(){

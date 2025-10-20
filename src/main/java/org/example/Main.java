@@ -12,6 +12,7 @@ public class Main {
 
         UserInterface userInterface = new UserInterface(register, scanner);
         userInterface.start();
+    }
 }
 
 
