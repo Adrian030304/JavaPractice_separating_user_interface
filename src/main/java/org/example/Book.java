@@ -5,10 +5,10 @@ public class Book {
     private String content;
     private int published;
 
-    public Book (String name, String content, int published) {
+    public Book (String name, int published, String content) {
         this.name = name;
-        this.content = content;
         this.published = published;
+        this.content = content;
     }
 
     public String getName() {

@@ -2,22 +2,19 @@ package org.example;
 
 import javax.naming.PartialResultException;
 import java.util.HashMap;
+import java.util.Hashtable;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        HashMap<String, String> numbers = new HashMap<>();
-        numbers.put("Uno", "One");
-        numbers.put("Dos", "Zwei");
-        numbers.put("Uno", "Ein");
+        Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
+        Book prideAndPrejudice = new Book("Pride and Prejudice", 1813, "....");
 
-        String translation = numbers.get("Uno");
-        System.out.println(translation);
-
-        System.out.println(numbers.get("Dos"));
-        System.out.println(numbers.get("Tres"));
-        System.out.println(numbers.get("Uno"));
+        HashMap<String, Book> directory = new HashMap<>();
+        directory.put(senseAndSensibility.getName(), senseAndSensibility);
+        directory.put(prideAndPrejudice.getName(), prideAndPrejudice);
+        System.out.println(directory);
     }
 }
 
